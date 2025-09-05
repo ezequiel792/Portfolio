@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Currículum Web - Facundo O’Conell</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #2e3a59;
+    }
+
+    /* Contenedor general */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem 1rem;
+    }
+
+    /* Header con nombre y menu */
+    header {
+      background-color: #2b3a67;
+      color: #e1e8f7;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 3px 10px rgb(43 58 103 / 0.3);
+      z-index: 1000;
+    }
+
+    .profile {
+      flex-grow: 1;
+      min-width: 220px;
+    }
+
+    .profile h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+      user-select: none;
+    }
+
+    .profile p {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #a3b1d1;
+      user-select: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #d9e1f2;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.5rem 0.7rem;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #465a97;
+      color: #f0f4ff;
+      box-shadow: 0 0 8px #7289daaa;
+    }
+
+    /* Main content */
+    main {
+      background: white;
+      margin-top: 2rem;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.05);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #2b3a67;
+      border-bottom: 3px solid #7289da;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    p, ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444b6e;
+    }
+
+    ul.skills {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    ul.skills li {
+      background: #7289da;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: default;
+      box-shadow: 0 2px 8px rgb(114 137 218 / 0.35);
+      transition: background-color 0.3s ease;
+    }
+
+    ul.skills li:hover {
+      background-color: #5568c8;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Proyectos - flex en fila */
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .project-card {
+      background: #f9fbff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgb(43 58 103 / 0.1);
+      padding: 1.3rem 1.8rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex: 1 1 280px;
+      max-width: 320px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgb(43 58 103 / 0.2);
+    }
+
+    .project-card h3 {
+      color: #2b3a67;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-card p {
+      color: #5a637f;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+
+    .project-card a {
+      padding: 0.7rem 0;
+      background-color: #465a97;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 3px 9px rgb(70 90 151 / 0.35);
+      transition: background-color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      background-color: #2b3a67;
+      box-shadow: 0 5px 12px rgb(43 58 103 / 0.5);
+    }
+
+    /* Footer con contacto */
+    footer {
+      background-color: #2b3a67;
+      color: #d9e1f2;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      box-shadow: 0 3px 10px rgb(43 58 103 / 0.3);
+    }
+
+    footer h2 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: #a3b1d1;
+    }
+
+    footer p, footer a {
+      margin: 0.25rem 0;
+      color: #c0c7e8;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #f0f4ff;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1rem 1rem;
+        position: relative;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-around;
+      }
+
+      main {
+        padding: 1.5rem 1rem 2rem 1rem;
+      }
+
+      .projects {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .project-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="profile">
+        <h1>Ezequiel García La Torre</h1>
+        <p>Estudiante de Computacion</p>
+      </div>
+      <nav aria-label="Navegación principal">
+        <a href="#sobre-mi" class="active">Sobre mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#formacion">Formación</a>
+        <a href="#proyectos">Proyectos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="sobre-mi" tabindex="0">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy estudiante de programación con gran interés en el desarrollo de software y videojuegos.
+          Actualmente me encuentro cursando en la escuela secundaria técnica, mientras complemento mi formación con cursos externos.
+          Me gusta trabajar en proyectos colaborativos y seguir aprendiendo nuevas tecnologías.
+        </p>
+      </section>
+
+      <section id="habilidades" tabindex="0">
+        <h2>Habilidades</h2>
+        <ul class="skills">
+          <li>HTML & CSS</li>
+          <li>Java</li>
+          <li>Trabajo en equipo</li>
+          <li>Resolución de problemas</li>
+          <li>Liderazgo</li>
+        </ul>
+      </section>
+
+      <section id="formacion" tabindex="0">
+        <h2>Formación</h2>
+        <ul>
+          <li>Escuela Técnica – Ciclo Orientado en Programación (en curso)</li>
+          <li>Curso de HTML – completado</li>
+          <li>Participación en proyecto escolar de desarrollo de software</li>
+        </ul>
+      </section>
+
+      <section id="proyectos" tabindex="0">
+        <h2>Proyectos</h2>
+        <div class="projects">
+          <div class="project-card">
+            <h3>Juego Pong</h3>
+            <p>Versión clásica del Pong programada en Java.</p>
+            <a href="https://github.com/ezequiel792/Portfolio/blob/main/Space-2.1-grupo-9-main.zip" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+          </div>
+          <div class="project-card">
+            <h3>Juego Galaga</h3>
+            <p>Proyecto escolar inspirado en Galaga con sprites personalizados.</p>
+            <a href="https://github.com/ezequiel792/Portfolio/blob/main/Space-2.1-grupo-9-main.zip" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+          </div>
+          <div class="project-card">
+            <h3>Juego estilo Pacman</h3>
+            <p>Escenarios y niveles desarrollados en Java similar al pacman.</p>
+            <a href="https://github.com/ezequiel792/Portfolio/blob/main/PacMan.zip" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h2>Contacto</h2>
+      <p><strong>Email:</strong> ezequielgarcialatorre@gmail.com</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/ezequiel792/Portfolio" target="_blank" rel="noopener noreferrer">https://github.com/ezequiel792</a></p>
+      <p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/garc%C3%ADa-la-torre-ezequiel-059a26382/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/GarciaLaTorreEzequiel</a></p>
+      <p>&copy; 2025 Ezequiel Garcia La Torre - Currículum Web</p>
+    </footer>
+  </div>
+
+  <script>
+    // Navegación suave y activo en menú
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Actualizar clase active
+        document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+        this.classList.add('active');
+
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  </script>
+</body> 
+</html>
